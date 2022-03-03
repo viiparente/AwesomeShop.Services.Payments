@@ -1,5 +1,6 @@
 ﻿using AwesomeShop.Services.Payments.Api.Infrastructure.PaymentGateway;
 using AwesomeShop.Services.Payments.Api.Infrastructure.Repositories;
+using AwesomeShop.Services.Payments.Api.Subscribers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
@@ -51,5 +52,11 @@ namespace AwesomeShop.Services.Payments.Api
             return services;
         }
 
+        public static IServiceCollection AddSubscribers(this IServiceCollection services)
+        {
+            services.AddHostedService<OrderCreatedSubscriber>();
+
+            return services;
+        }
     }
 }
