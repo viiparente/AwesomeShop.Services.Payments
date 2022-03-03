@@ -1,4 +1,5 @@
-﻿using AwesomeShop.Services.Payments.Api.Infrastructure.Repositories;
+﻿using AwesomeShop.Services.Payments.Api.Infrastructure.PaymentGateway;
+using AwesomeShop.Services.Payments.Api.Infrastructure.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
@@ -39,6 +40,13 @@ namespace AwesomeShop.Services.Payments.Api
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+
+            return services;
+        }
+
+        public static IServiceCollection AddPaymentGateway(this IServiceCollection services)
+        {
+            services.AddTransient<IPaymentGatewayService, MyPaymentGatewayService>();
 
             return services;
         }

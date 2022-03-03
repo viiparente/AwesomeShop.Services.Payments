@@ -29,7 +29,8 @@ namespace AwesomeShop.Services.Payments
         {
             services
                 .AddMongo()
-                .AddRepositories();
+                .AddRepositories()
+                .AddPaymentGateway();
 
 
 
