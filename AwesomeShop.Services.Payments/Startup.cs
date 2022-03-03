@@ -54,7 +54,6 @@ namespace AwesomeShop.Services.Payments
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AwesomeShop.Services.Payments v1"));
             }
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
