@@ -28,7 +28,8 @@ namespace AwesomeShop.Services.Payments
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddMongo();
+                .AddMongo()
+                .AddRepositories();
 
 
 

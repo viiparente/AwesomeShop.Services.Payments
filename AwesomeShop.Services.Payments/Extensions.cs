@@ -36,6 +36,12 @@ namespace AwesomeShop.Services.Payments.Api
 
             return services;
         }
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+
+            return services;
+        }
 
     }
 }
